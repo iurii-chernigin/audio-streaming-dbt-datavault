@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    database: audio-streaming-data-platform
+    schema: raw
+    tables:
+      - name: listen_events
+      - name: auth_events
+      - name: page_view_events
+      - name: status_change_events
