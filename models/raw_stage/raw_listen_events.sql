@@ -3,40 +3,40 @@
 select
 
     -- Event timestamp
-    ts, 
+    ts                  as play_start_ts, 
 
     -- Listening context
-    artist,
-    song,
-    duration,
-    itemInSession,
+    artist              as song_artist,
+    song                as song_name,
+    duration            as song_played_sec,
+    itemInSession + 1   as song_number_in_session,
+    lower(level)        as song_access_level,
 
     -- System application context
-    sessionId,
-    auth,
-
-    -- Subscription info
-    level,
+    sessionId           as session_id,
+    lower(auth)         as authorization_level,
 
     -- User meta
-    userId,
-    userAgent,
-    registration,
+    userId              as user_id,
+    userAgent           as user_agent,
+    registration        as user_registration_ts,
 
     -- Geo
-    city,
-    zip,
-    state,
-    lon,
-    lat,
+    lower(city)         as location_city,
+    lower(state)        as location_state,
+    zip                 as location_zip,
+    lon                 as location_longitute,
+    lat                 as location_latitude,
 
     -- Personal
-    lastName,
-    firstName,
-    gender
+    lastName            as user_last_name,
+    firstName           as user_first_name,
+    lower(gender)       as user_gender
 
 from {{ source('raw', 'listen_events')}}
 
+where date(ts) = date('{{ var('load_date') }}') 
+
 {% if var('is_test_run', default=true) %}
-    limit 5
+    limit 25
 {% endif %}
