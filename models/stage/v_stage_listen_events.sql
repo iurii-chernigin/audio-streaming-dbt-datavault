@@ -3,21 +3,53 @@
 
 source_model: 'raw_listen_events'
 derived_columns: 
-    record_source_id: '!playback-component'
-    record_load_datetime: 'ts'
-    user_id: 'userId'
-    session_id: 'sessionId'
+    record-source_id: '!playback-component'
+    record_load_date: "date('{{ var('load_date') }}')"
+    record_effective_from_date: 'play_start_ts'
+
 hashed_columns:
-    session_pk: 'session_id'
+    playback_pk:
+        - 'user_id'
+        - 'session_id'
+        - 'play_start_ts'
+    session_pk: 
+        - 'session_id'
+        - 'user_id'
     user_pk: 'user_id'
     song_pk:
-        - 'artist'
-        - 'song'
-        - 'duration'
-    location_pk:
-        - 'lat'
-        - 'lon'
-        - 'zip'
+        - 'song_artist'
+        - 'song_name'
+    location_city_pk: 'location_city'
+    location_state_pk: 'location_state'
+    location_geo_pk:
+        - 'location_latitude'
+        - 'location_longitute'
+        - 'location_zip'
+    
+    playback_hashdiff:
+        is_hashdiff: true
+        columns:
+            - 'song_played_sec'
+            - 'play_start_ts'
+            - 'user_id'
+            - 'session_id'
+    user_hashdiff:
+        is_hashdiff: true
+        columns:
+            - 'user_id'
+            - 'user_first_name'
+            - 'user_last_name'
+            - 'user_gender'
+            - 'user_registration_ts'
+    location_geo_hashdiff:
+        is_hashdiff: true
+        columns:
+            - 'location_latitude'
+            - 'location_longitute'
+            - 'location_zip'
+
+        
+
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
