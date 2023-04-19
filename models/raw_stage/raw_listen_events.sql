@@ -3,14 +3,17 @@
 select
 
     -- Event timestamp
-    ts                  as play_start_ts, 
+    ts as play_start_ts, 
+    timestamp_add(
+        ts, 
+        interval cast(duration as int64) second
+    ) as play_end_ts,
 
     -- Listening context
     artist              as song_artist,
     song                as song_name,
     duration            as song_played_sec,
     itemInSession + 1   as song_number_in_session,
-    lower(level)        as song_access_level,
 
     -- System application context
     sessionId           as session_id,
@@ -20,6 +23,7 @@ select
     userId              as user_id,
     userAgent           as user_agent,
     registration        as user_registration_ts,
+    lower(level)        as plan_type,
 
     -- Geo
     lower(city)         as location_city,
