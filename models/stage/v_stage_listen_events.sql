@@ -5,7 +5,7 @@ source_model: 'raw_listen_events'
 derived_columns: 
     record_source_id: '!playback-component'
     record_load_date: "date('{{ var('load_date') }}')"
-    record_effective_from_date: 'play_start_ts'
+    record_effective_from_ts: 'play_start_ts'
 hashed_columns:
     playback_pk:
         - 'user_id'
