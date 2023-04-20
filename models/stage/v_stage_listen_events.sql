@@ -19,14 +19,14 @@ hashed_columns:
     song_pk:
         - 'song_artist'
         - 'song_name'
+    song_artist_pk: 'song_artist'
     location_geo_pk:
         - 'location_latitude'
         - 'location_longitute'
     location_city_pk: 'location_city'
     location_state_pk: 'location_state'
     location_zip_pk: 'location_zip'
-    software_client_pk:
-        - 'user_id'
+    user_agent_pk:
         - 'user_agent'
     playback_hashdiff:
         is_hashdiff: true
@@ -58,6 +58,22 @@ hashed_columns:
         - 'play_start_ts'
         - 'song_artist'
         - 'song_name'
+    link_user_agent_user_pk:
+        - 'user_id'
+        - 'user_agent'
+    link_song_artist_pk:
+        - 'song_artist'
+        - 'song_name'
+    link_location_geo_zip_pk:
+        - 'location_zip'
+        - 'location_latitude'
+        - 'location_longitute'
+    link_location_zip_city_pk:
+        - 'location_zip'
+        - 'location_city'
+    link_location_city_state_pk:
+        - 'location_city'
+        - 'location_state'
 
 {%- endset -%}
 
