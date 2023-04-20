@@ -68,10 +68,10 @@ hashed_columns:
         - 'location_zip'
         - 'location_latitude'
         - 'location_longitute'
-    link_location_zip_city:
+    link_location_zip_city_pk:
         - 'location_zip'
         - 'location_city'
-    link_location_city_state:
+    link_location_city_state_pk:
         - 'location_city'
         - 'location_state'
 
