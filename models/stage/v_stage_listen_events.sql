@@ -25,8 +25,7 @@ hashed_columns:
     location_city_pk: 'location_city'
     location_state_pk: 'location_state'
     location_zip_pk: 'location_zip'
-    software_client_pk:
-        - 'user_id'
+    user_agent_pk:
         - 'user_agent'
     playback_hashdiff:
         is_hashdiff: true
@@ -58,6 +57,9 @@ hashed_columns:
         - 'play_start_ts'
         - 'song_artist'
         - 'song_name'
+    link_user_agent_user_pk:
+        - 'user_id'
+        - 'user_agent'
 
 {%- endset -%}
 
