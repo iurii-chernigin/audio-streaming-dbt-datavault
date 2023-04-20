@@ -19,6 +19,7 @@ hashed_columns:
     song_pk:
         - 'song_artist'
         - 'song_name'
+    song_artist_pk: 'song_artist'
     location_geo_pk:
         - 'location_latitude'
         - 'location_longitute'
@@ -60,6 +61,19 @@ hashed_columns:
     link_user_agent_user_pk:
         - 'user_id'
         - 'user_agent'
+    link_song_artist_pk:
+        - 'song_artist'
+        - 'song_name'
+    link_location_geo_zip_pk:
+        - 'location_zip'
+        - 'location_latitude'
+        - 'location_longitute'
+    link_location_zip_city:
+        - 'location_zip'
+        - 'location_city'
+    link_location_city_state:
+        - 'location_city'
+        - 'location_state'
 
 {%- endset -%}
 
