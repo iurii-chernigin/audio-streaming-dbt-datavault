@@ -9,7 +9,7 @@ with hub_song_play as (
         song_play_pk
     
     from {{ ref('hub_song_play') }}
-    where record_load_date = date('{{ var('load_date')}}')
+    where load_date = date('{{ var('load_date')}}')
 
 ),
 

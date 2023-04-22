@@ -3,9 +3,9 @@
 {%- set src_hashdiff = 'song_play_hashdiff' -%}
 
 {%- set src_payload = ["song_played_sec", "play_start_ts", "play_end_ts"] -%}
-{%- set src_eff = "record_effective_from_ts" -%}
-{%- set src_ldts = "record_load_date" -%}
-{%- set src_source = "record_source_id" -%}
+{%- set src_eff = "effective_from_ts" -%}
+{%- set src_ldts = "load_date" -%}
+{%- set src_source = "record_source" -%}
 
 {{ 
 

@@ -3,9 +3,10 @@
 
 source_model: 'raw_auth_events'
 derived_columns: 
-    record_source_id: '!auth_events'
-    record_load_date: "date('{{ var('load_date') }}')"
-    record_effective_from_ts: 'event_ts'
+    effective_from_ts: 'event_ts'
+    authorization_ts: 'event_ts'
+    load_date: "date('{{ var('load_date') }}')"
+    record_source: '!auth_events'
 hashed_columns:
     authorization_pk: 
         - 'user_id'

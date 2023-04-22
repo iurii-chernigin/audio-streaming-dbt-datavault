@@ -3,9 +3,9 @@
 
 source_model: 'raw_listen_events'
 derived_columns: 
-    record_source_id: '!listen_events'
-    record_load_date: "date('{{ var('load_date') }}')"
-    record_effective_from_ts: 'play_start_ts'
+    record_source: '!listen_events'
+    load_date: "date('{{ var('load_date') }}')"
+    effective_from_ts: 'play_start_ts'
 hashed_columns:
     song_play_pk:
         - 'user_id'
