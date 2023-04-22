@@ -1,6 +1,6 @@
 {%- set source_model = 'v_stage_listen_events' -%}
-{%- set src_pk = 'playback_pk' -%}
-{%- set src_hashdiff = 'playback_hashdiff' -%}
+{%- set src_pk = 'song_play_pk' -%}
+{%- set src_hashdiff = 'song_play_hashdiff' -%}
 
 {%- set src_payload = ["song_played_sec", "play_start_ts", "play_end_ts"] -%}
 {%- set src_eff = "record_effective_from_ts" -%}
