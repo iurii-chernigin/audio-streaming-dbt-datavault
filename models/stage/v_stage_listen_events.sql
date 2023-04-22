@@ -3,11 +3,11 @@
 
 source_model: 'raw_listen_events'
 derived_columns: 
-    record_source_id: '!playback-component'
+    record_source_id: '!listen_events'
     record_load_date: "date('{{ var('load_date') }}')"
     record_effective_from_ts: 'play_start_ts'
 hashed_columns:
-    playback_pk:
+    song_play_pk:
         - 'user_id'
         - 'session_id'
         - 'play_start_ts'
@@ -28,7 +28,7 @@ hashed_columns:
     location_zip_pk: 'location_zip'
     user_agent_pk:
         - 'user_agent'
-    playback_hashdiff:
+    song_play_hashdiff:
         is_hashdiff: true
         columns:
             - 'user_id'
@@ -52,7 +52,7 @@ hashed_columns:
         columns:
             - 'user_id'
             - 'user_agent'
-    link_playback_context_pk:
+    link_song_play_context_pk:
         - 'user_id'
         - 'session_id'
         - 'play_start_ts'
