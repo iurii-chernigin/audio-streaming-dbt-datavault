@@ -1,4 +1,4 @@
-{% set source_model = 'v_stage_listen_events' %}
+{% set source_model = ['v_stage_listen_events', 'v_stage_auth_events'] %}
 {% set src_pk = 'link_user_agent_user_pk' %}
 {% set src_fk = ['user_agent_pk', 'user_pk'] %}
 {% set src_ldts = 'load_date' %}

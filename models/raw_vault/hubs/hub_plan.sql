@@ -1,4 +1,4 @@
-{% set source_model = 'v_stage_listen_events' %}
+{% set source_model = ['v_stage_listen_events', 'v_stage_auth_events'] %}
 {% set src_pk = 'plan_pk' %}
 {% set src_nk = 'plan_type' %}
 {% set src_ldts = 'load_date' %}

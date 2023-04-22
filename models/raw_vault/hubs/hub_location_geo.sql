@@ -1,4 +1,4 @@
-{% set source_model = 'v_stage_listen_events' %}
+{% set source_model = ['v_stage_listen_events', 'v_stage_auth_events'] %}
 {% set src_pk = 'location_geo_pk' %}
 {% set src_nk = ['location_latitude', 'location_longitute'] %}
 {% set src_ldts = 'load_date' %}
