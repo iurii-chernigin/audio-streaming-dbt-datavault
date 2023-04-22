@@ -3,9 +3,9 @@
 {% set src_hashdiff = 'user_hashdiff' %}
 
 {% set src_payload = ['user_first_name', 'user_last_name', 'user_gender', 'user_registration_ts'] %}
-{% set src_eff = "record_effective_from_ts" %}
-{% set src_ldts = "record_load_date" %}
-{% set src_source = "record_source_id" %}
+{% set src_eff = "effective_from_ts" %}
+{% set src_ldts = "load_date" %}
+{% set src_source = "record_source" %}
 
 {{ 
 

@@ -1,8 +1,8 @@
 {% set source_model = 'v_stage_listen_events' %}
 {% set src_pk = 'location_geo_pk' %}
 {% set src_nk = ['location_latitude', 'location_longitute'] %}
-{% set src_ldts = 'record_load_date' %}
-{% set src_source = 'record_source_id' %}
+{% set src_ldts = 'load_date' %}
+{% set src_source = 'record_source' %}
 
 
 {{
