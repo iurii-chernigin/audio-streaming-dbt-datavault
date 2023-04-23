@@ -29,7 +29,7 @@ select
     lower(city)         as location_city,
     lower(state)        as location_state,
     zip                 as location_zip,
-    lon                 as location_longitute,
+    lon                 as location_longitude,
     lat                 as location_latitude,
 
     -- Personal

@@ -22,7 +22,7 @@ hashed_columns:
     song_artist_pk: 'song_artist'
     location_geo_pk:
         - 'location_latitude'
-        - 'location_longitute'
+        - 'location_longitude'
     location_city_pk: 'location_city'
     location_state_pk: 'location_state'
     location_zip_pk: 'location_zip'
@@ -46,7 +46,7 @@ hashed_columns:
         is_hashdiff: true
         columns:
             - 'location_latitude'
-            - 'location_longitute'
+            - 'location_longitude'
     software_client_hashdiff:
         is_hashdiff: true
         columns:
@@ -67,7 +67,7 @@ hashed_columns:
     link_location_geo_zip_pk:
         - 'location_zip'
         - 'location_latitude'
-        - 'location_longitute'
+        - 'location_longitude'
     link_location_zip_city_pk:
         - 'location_zip'
         - 'location_city'
