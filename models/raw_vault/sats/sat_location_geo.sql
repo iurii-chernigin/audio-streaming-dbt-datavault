@@ -2,7 +2,7 @@
 {%- set src_pk = 'location_geo_pk' -%}
 {%- set src_hashdiff = 'location_geo_hashdiff' -%}
 
-{%- set src_payload = ["location_latitude", "location_longitute"] -%}
+{%- set src_payload = ["location_latitude", "location_longitude"] -%}
 {%- set src_eff = "effective_from_ts" -%}
 {%- set src_ldts = "load_date" -%}
 {%- set src_source = "record_source" -%}
