@@ -8,6 +8,7 @@ with song_play as (
         -- Hub's hashed primary key
         hub_song_play.song_play_pk,
         link_song_play_context.session_pk,
+        hub_song_play.user_id,
         
         -- Satellite meta
         sat_song_play.song_played_sec,
@@ -15,7 +16,7 @@ with song_play as (
         sat_song_play.play_end_ts,
 
         hub_song.song_name,
-        hub_song.song_artist
+        hub_song.song_artist,
     
     from {{ ref('hub_song_play') }} as hub_song_play
 
@@ -81,6 +82,7 @@ session as (
 
 select 
 
+    song_play.user_id,
     -- Play meta
     song_play.song_played_sec,
     song_play.play_start_ts,
