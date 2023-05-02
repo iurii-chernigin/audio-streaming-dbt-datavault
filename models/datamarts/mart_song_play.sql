@@ -2,12 +2,13 @@
 {{ 
     
     config(
-        materialized='table',
-        partition_by={
-            'field': 'play_start_ts',
-            'data_type': 'timestamp',
+        materialized = 'table',
+        partition_by = {
+            'field': 'play_start_date',
+            'data_type': 'date',
             'granularity': 'day'
-        }
+        },
+        cluster_by = ['user_id', 'song_name', 'location_city']
     )
 
 }}
@@ -99,6 +100,8 @@ select
     song_play.song_played_sec,
     song_play.play_start_ts,
     song_play.play_end_ts,
+
+    date(song_play.play_start_ts) as play_start_date,
 
     -- Song meta
     song_play.song_name,
