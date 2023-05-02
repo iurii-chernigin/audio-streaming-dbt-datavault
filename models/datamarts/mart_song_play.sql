@@ -1,5 +1,17 @@
 
-{{ config(materialized='view')}}
+{{ 
+    
+    config(
+        materialized = 'table',
+        partition_by = {
+            'field': 'play_start_date',
+            'data_type': 'date',
+            'granularity': 'day'
+        },
+        cluster_by = ['user_id', 'song_name', 'location_city']
+    )
+
+}}
 
 
 with song_play as (
@@ -15,6 +27,7 @@ with song_play as (
         sat_song_play.play_start_ts,
         sat_song_play.play_end_ts,
 
+        -- Song information
         hub_song.song_name,
         hub_song.song_artist,
     
@@ -88,6 +101,8 @@ select
     song_play.play_start_ts,
     song_play.play_end_ts,
 
+    date(song_play.play_start_ts) as play_start_date,
+
     -- Song meta
     song_play.song_name,
     song_play.song_artist,
@@ -104,6 +119,3 @@ select
 from song_play
 
 left join session using(session_pk)
-
-
-limit 10
